@@ -1,0 +1,25 @@
+{
+  "name": "vanilla-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexsandroSA/vanilla-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexsandroSA/vanilla-js/issues"
+  },
+  "homepage": "https://github.com/AlexsandroSA/vanilla-js#readme",
+  "dependencies": {
+    "astro": "^5.1.1"
+  }
+}

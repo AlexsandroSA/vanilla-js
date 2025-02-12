@@ -1,14 +1,26 @@
 ---
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component frontmatter". It never runs in the browser.
+import { getCollection } from "astro:content";
+import PageLayout from "../layouts/PageLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = await getCollection("blog");
 ---
-<html>
-  <body>
-    <h1>vanilla-js</h1>
-  </body>
-</html>
-<style>
-  h1 {
-    color: #F0DB4F;
-  }
-</style>
+
+<PageLayout title="Home" description="Welcome to VanillaJS">
+  <section>
+    <ul>
+      {
+        posts.map((post) => (
+          <li class="my-20">
+            <a class="group focus:outline-none" href={`/blog/${post.id}`}>
+              <h3 class="font-bold text-2xl lg:text-4xl lg:leading-snug group-hover:underline group-focus:underline">
+                {post.data.title}
+              </h3>
+              <p>{post.data.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</PageLayout>

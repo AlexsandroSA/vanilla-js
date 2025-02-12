@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+
+body {
+    border-top: 10px solid gold;
+}

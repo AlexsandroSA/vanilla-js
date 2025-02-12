@@ -13,13 +13,21 @@
     "url": "git+https://github.com/AlexsandroSA/vanilla-js.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Alexsandro Silva Alves",
+    "url": "https://alexsandro-sa.com.br/"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlexsandroSA/vanilla-js/issues"
   },
   "homepage": "https://github.com/AlexsandroSA/vanilla-js#readme",
   "dependencies": {
-    "astro": "^5.1.1"
+    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.2.1",
+    "@tailwindcss/vite": "^4.0.6",
+    "astro": "5.1.1",
+    "tailwindcss": "^4.0.6"
   }
 }

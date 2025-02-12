@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+import type { CollectionEntry } from "astro:content";
+import PageHead from "../components/PageHead.astro";
+import PageHeader from "../components/PageHeader.astro";
+import PageFooter from "../components/PageFooter.astro";
+import { SITE } from "../consts";
+import FormattedDate from "../components/FormattedDate.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
+  </head>
+  <body>
+    <PageHeader />
+    
+    <main
+      class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased"
+    >
+      <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
+        <article class="p-5 break-words">
+          <header class="mb-4 lg:mb-6 not-format">
+            <FormattedDate date={new Date()} />
+            <h1
+              class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white"
+            >
+              {title}
+            </h1>
+          </header>
+
+          <slot />
+        </article>
+      </div>
+    </main>
+
+    <PageFooter />
+  </body>
+</html>

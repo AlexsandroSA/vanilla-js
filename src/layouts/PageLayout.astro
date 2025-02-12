@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+
+import PageHead from "../components/PageHead.astro";
+import PageHeader from "../components/PageHeader.astro";
+import PageFooter from "../components/PageFooter.astro";
+import { SITE } from "../consts";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
+  </head>
+  <body>
+    <PageHeader />
+
+    <main class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <slot />
+    </main>
+
+    <PageFooter />
+  </body>
+</html>

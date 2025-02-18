@@ -1,8 +1,11 @@
 ---
+isDraft: false
 title: 'Markdown Style Guide'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Fev 12, 2025'
-image: 'https://picsum.photos/200'
+pubDate: 2025-02-13
+image:
+  src: 'https://picsum.photos/600'
+  alt: 'A random image'
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

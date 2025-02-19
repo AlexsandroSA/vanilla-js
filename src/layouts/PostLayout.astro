@@ -20,7 +20,7 @@ const { title, description, image, pubDate } = Astro.props;
   <body>
     <PageHeader />
 
-    <main class="py-8 px-4 mx-auto max-w-screen-xl">
+    <main class="py-8 px-4 mx-auto max-w-4xl">
       <article>
         <header class="mb-12 mt-6">
           <figure class="h-96 overflow-hidden mb-4">
@@ -45,10 +45,10 @@ const { title, description, image, pubDate } = Astro.props;
         </header>
 
         <div
-          class="prose prose-neutral
+          class="prose prose-neutral prose-xl 
         prose-h1:font-bold prose-h1:text-xl
         prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
-        prose-headings:underline min-w-fit w-full"
+        min-w-fit w-full"
         >
           <slot />
         </div>

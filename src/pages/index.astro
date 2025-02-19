@@ -15,8 +15,9 @@ const posts = await getCollection("blog");
       Desvendando o JavaScript
     </h2>
     <p class="mt-2 text-lg/8 text-gray-600">
-      Explore os mistérios do Javascriot com explicações claras e exemplos
-      práticos. Sem libs, sem frameworks apenas o bom e velho VanillaJs.
+      Desvende os segredos do JavaScript raiz. Sem amarras, sem dependências.
+      Aventure-se no mundo do VanillaJS e descubra a verdadeira essência da
+      linguagem que move a web.
     </p>
   </section>
 
@@ -38,14 +39,14 @@ const posts = await getCollection("blog");
                 alt={post.data.image.alt}
                 class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
               />
-              <h3 class="mt-6 text-2xl font-semibold text-gray-900">
+              <div class="flex items-center gap-x-4 text-xs my-2">
+                <FormattedDate date={post.data.pubDate} />
+              </div>
+
+              <h3 class="text-2xl font-semibold text-gray-900">
                 <span class="absolute inset-0" />
                 {post.data.title}
               </h3>
-
-              <div class="flex items-center gap-x-4 text-xs">
-                <FormattedDate date={post.data.pubDate} />
-              </div>
             </a>
           </li>
         ))

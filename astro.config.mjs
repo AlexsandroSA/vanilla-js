@@ -5,10 +5,12 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://vanilla-js-red.vercel.app/',
+	site: 'https://www.vanilla-js.com.br/',
 	integrations: [mdx(), sitemap()],
 	vite: {
 		plugins: [tailwindcss()],
 	},
-	
+	image: {
+		domains: ["vanilla-js"],
+	}
 });

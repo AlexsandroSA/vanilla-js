@@ -4,11 +4,9 @@ title: "O que é Vanilla JS?"
 description: ""
 pubDate: 2025-02-18
 image:
-  src: "https://picsum.photos/700"
-  alt: "Images de sorvetes fazendo uma brincadeira com termo vanilla e outros frameworks/libs em javascript"
+  src: "../../../assets/vanilajs.jpeg"
+  alt: "Uma ilustração divertida de sorvetes com nomes de frameworks e bibliotecas JavaScript, brincando com o termo 'vanilla' para se referir ao JavaScript puro."
 ---
-
-> A mente que se abre a uma nova ideia jamais voltará ao seu tamanho original - Albert Einstein
 
 Se você está começando no mundo do desenvolvimento web ou já é um profissional experiente, com certeza já ouviu falar em JavaScript. Mas você sabe o que é Vanilla JS?
 

@@ -8,7 +8,7 @@ const posts = await getCollection("blog");
 
 <PageLayout title="Home" description="Welcome to VanillaJS">
   <!-- HERO -->
-  <section class="mx-auto max-w-2xl lg:mx-0 my-12">
+  <section class="mx-auto my-12">
     <h2
       class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
     >
@@ -34,6 +34,7 @@ const posts = await getCollection("blog");
           <li class="group relative">
             <a href={`/blog/${post.id}`}>
               <img
+                loading="lazy"
                 src={post.data.image.src}
                 alt={post.data.image.alt}
                 class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"

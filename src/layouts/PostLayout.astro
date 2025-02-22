@@ -22,24 +22,28 @@ const { title, description, image, pubDate } = Astro.props;
 
     <main class="py-8 px-4 mx-auto max-w-4xl">
       <article>
+        <div class="flex items-center gap-x-4 text-xs">
+          <FormattedDate date={pubDate} />            
+        </div>
+
+        <h2
+          class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+        >
+          {title}
+        </h2>
+        
         <header class="mb-12 mt-6">
-          <figure class="h-96 overflow-hidden mb-4">
+          <figure class="_h-96 overflow-hidden mb-4">
             <img
+              transition:name="cover"
+              loading="lazy"
               src={image.src}
               alt={image.alt}
               class="w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
             />
           </figure>
 
-          <div class="flex items-center gap-x-4 text-xs">
-            <FormattedDate date={pubDate} />            
-          </div>
-
-          <h2
-            class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-          >
-            {title}
-          </h2>
+          
 
           <p class="mt-6 text-xl/8 text-gray-700">{description}</p>
         </header>

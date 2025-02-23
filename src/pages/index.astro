@@ -14,6 +14,7 @@ const posts = await getCollection("blog");
     >
       Desvendando o JavaScript
     </h2>
+    
     <p class="mt-2 text-lg/8 text-gray-600">
       Sem amarras, sem dependências. Aventure-se no mundo do VanillaJS e
       descubra a verdadeira essência da linguagem que move a web.
@@ -40,6 +41,7 @@ const posts = await getCollection("blog");
                 alt={post.data.image.alt}
                 class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
               />
+
               <div class="flex items-center gap-x-4 text-xs my-2">
                 <FormattedDate date={post.data.pubDate} />
               </div>

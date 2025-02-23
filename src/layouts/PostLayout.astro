@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
+
 import type { CollectionEntry } from "astro:content";
+import { SITE } from "../consts";
 import PageHead from "../components/PageHead.astro";
 import PageHeader from "../components/PageHeader.astro";
 import PageFooter from "../components/PageFooter.astro";
-import { SITE } from "../consts";
 import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
@@ -23,7 +24,7 @@ const { title, description, image, pubDate } = Astro.props;
     <main class="py-8 px-4 mx-auto max-w-4xl">
       <article>
         <div class="flex items-center gap-x-4 text-xs">
-          <FormattedDate date={pubDate} />            
+          <FormattedDate date={pubDate} />
         </div>
 
         <h2
@@ -31,7 +32,7 @@ const { title, description, image, pubDate } = Astro.props;
         >
           {title}
         </h2>
-        
+
         <header class="mb-12 mt-6">
           <figure class="_h-96 overflow-hidden mb-4">
             <img
@@ -43,13 +44,11 @@ const { title, description, image, pubDate } = Astro.props;
             />
           </figure>
 
-          
-
           <p class="mt-6 text-xl/8 text-gray-700">{description}</p>
         </header>
 
         <div
-          class="prose prose-neutral prose-xl 
+          class="prose prose-neutral prose-xl
         prose-h1:font-bold prose-h1:text-xl
         prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
         min-w-fit w-full"

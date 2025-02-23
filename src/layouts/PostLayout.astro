@@ -15,49 +15,49 @@ const { title, description, image, pubDate } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
-  </head>
-  <body>
-    <PageHeader />
+	<head>
+		<PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
+	</head>
+	<body>
+		<PageHeader />
 
-    <main class="py-8 px-4 mx-auto max-w-4xl">
-      <article>
-        <div class="flex items-center gap-x-4 text-xs">
-          <FormattedDate date={pubDate} />
-        </div>
+		<main class="py-8 px-4 mx-auto max-w-4xl">
+			<article>
+				<div class="flex items-center gap-x-4 text-xs">
+					<FormattedDate date={pubDate} />
+				</div>
 
-        <h2
-          class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-        >
-          {title}
-        </h2>
+				<h2
+					class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+				>
+					{title}
+				</h2>
 
-        <header class="mb-12 mt-6">
-          <figure class="_h-96 overflow-hidden mb-4">
-            <img
-              transition:name="cover"
-              loading="lazy"
-              src={image.src}
-              alt={image.alt}
-              class="w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-            />
-          </figure>
+				<header class="mb-12 mt-6">
+					<figure class="_h-96 overflow-hidden mb-4">
+						<img
+							transition:name="cover"
+							loading="lazy"
+							src={image.src}
+							alt={image.alt}
+							class="w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+						/>
+					</figure>
 
-          <p class="mt-6 text-xl/8 text-gray-700">{description}</p>
-        </header>
+					<p class="mt-6 text-xl/8 text-gray-700">{description}</p>
+				</header>
 
-        <div
-          class="prose prose-neutral prose-xl
+				<div
+					class="prose prose-neutral prose-xl
         prose-h1:font-bold prose-h1:text-xl
         prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
         min-w-fit w-full"
-        >
-          <slot />
-        </div>
-      </article>
-    </main>
+				>
+					<slot />
+				</div>
+			</article>
+		</main>
 
-    <PageFooter />
-  </body>
+		<PageFooter />
+	</body>
 </html>

@@ -1,7 +1,6 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
-
 body {
-    border-top: 10px solid gold;
+	border-top: 10px solid gold;
 }

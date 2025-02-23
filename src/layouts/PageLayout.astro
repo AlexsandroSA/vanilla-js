@@ -11,16 +11,16 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
-  </head>
-  <body>
-    <PageHeader />
+	<head>
+		<PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
+	</head>
+	<body>
+		<PageHeader />
 
-    <main class="py-8 px-4 mx-auto max-w-4xl">
-      <slot />
-    </main>
+		<main class="py-8 px-4 mx-auto max-w-4xl">
+			<slot />
+		</main>
 
-    <PageFooter />
-  </body>
+		<PageFooter />
+	</body>
 </html>

@@ -7,53 +7,53 @@ const posts = await getCollection("blog");
 ---
 
 <PageLayout title="Home" description="Welcome to VanillaJS">
-  <!-- HERO -->
-  <section class="mx-auto my-12">
-    <h2
-      class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-    >
-      Desvendando o JavaScript
-    </h2>
-    
-    <p class="mt-2 text-lg/8 text-gray-600">
-      Sem amarras, sem dependências. Aventure-se no mundo do VanillaJS e
-      descubra a verdadeira essência da linguagem que move a web.
-    </p>
-  </section>
+	<!-- HERO -->
+	<section class="mx-auto my-12">
+		<h2
+			class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+		>
+			Desvendando o JavaScript
+		</h2>
 
-  <!-- POSTS -->
-  <section class="mx-auto">
-    <header class="my-4">
-      <h2 class="text-2xl font-bold text-gray-900">Recentes</h2>
-    </header>
+		<p class="mt-2 text-lg/8 text-gray-600">
+			Sem amarras, sem dependências. Aventure-se no mundo do VanillaJS e
+			descubra a verdadeira essência da linguagem que move a web.
+		</p>
+	</section>
 
-    <ul
-      class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-8"
-    >
-      {
-        posts.map((post) => (
-          <li class="group relative">
-            <a href={`/blog/${post.id}`}>
-              <img
-                loading="lazy"
-                transition:name="cover"
-                src={post.data.image.src}
-                alt={post.data.image.alt}
-                class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-              />
+	<!-- POSTS -->
+	<section class="mx-auto">
+		<header class="my-4">
+			<h2 class="text-2xl font-bold text-gray-900">Recentes</h2>
+		</header>
 
-              <div class="flex items-center gap-x-4 text-xs my-2">
-                <FormattedDate date={post.data.pubDate} />
-              </div>
+		<ul
+			class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-8"
+		>
+			{
+				posts.map((post) => (
+					<li class="group relative">
+						<a href={`/blog/${post.id}`}>
+							<img
+								loading="lazy"
+								transition:name="cover"
+								src={post.data.image.src}
+								alt={post.data.image.alt}
+								class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+							/>
 
-              <h3 class="text-2xl font-semibold text-gray-900">
-                <span class="absolute inset-0" />
-                {post.data.title}
-              </h3>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+							<div class="flex items-center gap-x-4 text-xs my-2">
+								<FormattedDate date={post.data.pubDate} />
+							</div>
+
+							<h3 class="text-2xl font-semibold text-gray-900">
+								<span class="absolute inset-0" />
+								{post.data.title}
+							</h3>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </PageLayout>

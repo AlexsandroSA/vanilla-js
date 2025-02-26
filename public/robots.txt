@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.vanilla-js.com.br//sitemap-index.xml
+Sitemap: https://www.vanilla-js.com.br/sitemap-index.xml

@@ -1,16 +1,16 @@
 ---
-import "../styles/global.css";
+import "@/styles/global.css";
 
-import { SITE } from "../consts";
-import PageHead from "../components/PageHead.astro";
-import PageHeader from "../components/PageHeader.astro";
-import PageFooter from "../components/PageFooter.astro";
+import { SITE } from "@/consts";
+import PageHead from "@/components/PageHead.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import PageFooter from "@/components/PageFooter.astro";
 
 const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
 	</head>

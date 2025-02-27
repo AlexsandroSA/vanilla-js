@@ -1,13 +1,14 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 
+import { SITE } from "@/consts";
+
 export async function GET(context) {
 	const blog = await getCollection("blog");
 
 	return rss({
-		title: "VanillaJS",
-		description:
-			"Aventure-se no mundo do VanillaJS e descubra a verdadeira essência da linguagem que move a web.",
+		title: SITE.TITLE,
+		description: SITE.DESCRIPTION,
 		site: context.site,
 		items: blog.map((post) => ({
 			title: post.data.title,

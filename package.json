@@ -24,15 +24,16 @@
   },
   "homepage": "https://github.com/AlexsandroSA/vanilla-js#readme",
   "dependencies": {
-    "@astrojs/mdx": "^4.0.8",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
-    "@tailwindcss/vite": "^4.0.6",
+    "@astrojs/mdx": "4.0.8",
+    "@astrojs/rss": "4.0.11",
+    "@astrojs/sitemap": "3.2.1",
+    "@tailwindcss/vite": "4.0.6",
     "astro": "5.1.1",
-    "tailwindcss": "^4.0.6"
+    "tailwindcss": "4.0.6",
+    "@tailwindcss/typography": "0.5.16"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
+    
     "prettier": "^3.5.2",
     "prettier-plugin-astro": "^0.14.1"
   }

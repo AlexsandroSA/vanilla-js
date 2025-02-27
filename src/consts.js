@@ -1,4 +1,5 @@
 export const SITE = {
 	TITLE: "VanillaJS",
-	DESCRIPTION: "Welcome to VanillaJS",
+	DESCRIPTION:
+		"Aventure-se no mundo do VanillaJS e descubra a verdadeira essência da linguagem que move a web.",
 };

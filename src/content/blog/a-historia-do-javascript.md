@@ -2,6 +2,7 @@
 isDraft: false
 title: "A história do JavaScript: Da simplicidade ao domínio da web"
 description: "Um pouco da fascinante história de uma das linguagens de programação mais populares do mundo"
+tags: ["JavaScript"]
 pubDate: 2025-03-01
 image:
   src: "/assets/posts/default.png"

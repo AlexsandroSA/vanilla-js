@@ -2,6 +2,7 @@
 isDraft: false
 title: "Qual é a diferença entre JavaScript e ECMAScript?"
 description: 'O ECMAScript define "como" a linguagem deve funcionar, e o JavaScript define "o que" a linguagem faz.'
+tags: ["ECMAScript"]
 pubDate: 2025-03-02
 image:
   src: "/assets/posts/default.png"

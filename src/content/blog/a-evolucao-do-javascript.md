@@ -2,6 +2,7 @@
 isDraft: false
 title: "A Evolução do JavaScript: Uma jornada através das versões"
 description: ""
+tags: ["JavaScript"]
 pubDate: 2025-03-02
 image:
   src: "/assets/posts/default.png"

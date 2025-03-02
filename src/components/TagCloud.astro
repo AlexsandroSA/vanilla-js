@@ -1,0 +1,38 @@
+---
+import { slugify } from "@/utils/slugify";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+const allTags = allPosts.map((tag) => tag.data.tags).flat();
+
+const processedTags = allTags.reduce((acc, tag) => {
+	const value = acc[tag] || 0;
+	const pTags = {
+		...acc,
+		[tag]: value + 1,
+	};
+
+	const sortedTags = Object.fromEntries(
+		Object.entries(pTags).sort((a, b) => b[1] - a[1]),
+	);
+
+	return sortedTags;
+}, {});
+
+const { showCount, displayNumber } = Astro.props;
+---
+
+<div class="flex items-center gap-x-4 text-xs">
+	{
+		Object.entries(processedTags)
+			.map(([key, val]) => (
+				<a
+					href={`/tags/${slugify(key)}`}
+					class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+				>
+					#{slugify(key)} {showCount && `(${val})`}
+				</a>
+			))
+			.slice(0, displayNumber)
+	}
+</div>

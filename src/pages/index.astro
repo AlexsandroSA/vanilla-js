@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 
 import PageLayout from "@/layouts/PageLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
+import Hero from "@/components/Hero.astro";
+import TagCloud from "@/components/TagCloud.astro";
 
 const allPosts = await getCollection("blog");
 const posts = allPosts.sort(
@@ -13,18 +15,13 @@ const posts = allPosts.sort(
 
 <PageLayout title="Home" description="Welcome to VanillaJS">
 	<!-- HERO -->
-	<section class="mx-auto my-12">
-		<h2
-			class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-		>
-			Desvendando o JavaScript
-		</h2>
+	<Hero
+		title="Desvendando o JavaScript"
+		description="Sem amarras, sem dependências. Aventure-se no mundo do VanillaJS e descubra a verdadeira essência da linguagem que move a web."
+	/>
 
-		<p class="mt-2 text-lg/8 text-gray-600">
-			Sem amarras, sem dependências. Aventure-se no mundo do VanillaJS e
-			descubra a verdadeira essência da linguagem que move a web.
-		</p>
-	</section>
+	<!-- TAGS -->
+	<TagCloud showCount={true} />
 
 	<!-- POSTS -->
 	<section class="mx-auto">

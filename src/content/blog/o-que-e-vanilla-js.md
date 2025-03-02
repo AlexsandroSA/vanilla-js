@@ -3,6 +3,7 @@ isDraft: false
 title: "O que é Vanilla JS?"
 description: ""
 pubDate: 2025-02-18
+tags: ["Vanilla JS"]
 image:
   src: "/assets/posts/vanilla-js.webp"
   alt: "Uma ilustração divertida de sorvetes com nomes de frameworks e bibliotecas JavaScript, brincando com o termo 'vanilla' para se referir ao JavaScript puro."

@@ -1,0 +1,91 @@
+---
+import FormattedDate from "@/components/FormattedDate.astro";
+import Hero from "@/components/Hero.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import { slugify } from "@/utils/slugify";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({}) {
+	const allPosts = await getCollection("blog");
+	const sortedPosts = allPosts.sort(
+		(a, b) =>
+			new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+	);
+
+	const allTags = new Set();
+	sortedPosts.map((post) => {
+		post.data.tags && post.data.tags.map((tag) => allTags.add(slugify(tag)));
+	});
+
+	console.log(allTags);
+
+	return Array.from(allTags).map((tag) => {
+		console.log(tag);
+		
+		const filteredPosts = sortedPosts.filter((post) => {
+			const tags = post.data.tags.map(item => slugify(item));
+			return tags.includes(tag);
+		});
+
+		console.log(filteredPosts);
+
+		return {
+			params: { tag },
+			props: {
+				posts: filteredPosts,
+			},
+		};
+	});
+}
+
+const { posts } = Astro.props;
+const { tag } = Astro.params;
+
+let title = tag;
+let description = "Posts with tag " + tag + ".";
+---
+
+<PageLayout>
+	
+	<!-- HERO -->
+	<Hero 
+		title={`#${title}`}
+		description={description}
+	/>
+	
+	<!-- POSTS -->
+	<section class="blog-post-list mt-12" aria-label="Blog post list">
+		<ul
+			class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-8"
+		>
+			{
+				posts.map((post) => (
+					<li class="group relative">
+						<a href={`/blog/${post.id}`}>
+							<img
+								loading="lazy"
+								transition:name="cover"
+								src={post.data.image.src}
+								alt={post.data.image.alt}
+								class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
+							/>
+
+							<div class="flex items-center gap-x-4 text-xs my-2">
+								<FormattedDate date={post.data.pubDate} />
+							</div>
+
+							<h3 class="text-2xl font-semibold text-gray-900">
+								<span class="absolute inset-0" />
+								{post.data.title}
+							</h3>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+
+		<p class="posts-link">
+			<a href="/tags">Browse all tags</a>
+		</p>
+	</section>
+</PageLayout>

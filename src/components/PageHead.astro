@@ -1,4 +1,6 @@
 ---
+import { Seo } from "astro-seo-meta";
+import { Schema } from "astro-seo-schema";
 import { ClientRouter } from "astro:transitions";
 
 import "@/styles/global.css";
@@ -15,21 +17,38 @@ const { title, description } = Astro.props;
 <link rel="canonical" href={canonicalURL} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<!-- Seo -->
+<Seo
+	title={title}
+	description={description}
+	keywords={["vanillaJS", "javascript"]}
+	themeColor="#000000"
+	colorScheme="light"
+	icon="/favicon.ico"
+/>
+
+<!-- Schema -->
+<Schema
+	item={{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: "VanillaJS",
+		url: "https://www.vanilla-js.com.br/",
+	}}
+/>
+
+<!-- ClientRouter -->
+<ClientRouter />
 
 <!-- Google tag (gtag.js) -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC"
+></script>
 <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() {
 		dataLayer.push(arguments);
 	}
-	
+
 	gtag("js", new Date());
 	gtag("config", "G-S7RJ4JL8EC");
 </script>
-
-<ClientRouter />

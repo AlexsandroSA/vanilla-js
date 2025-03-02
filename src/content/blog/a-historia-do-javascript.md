@@ -4,7 +4,7 @@ title: "A história do JavaScript: Da simplicidade ao domínio da web"
 description: "Um pouco da fascinante história de uma das linguagens de programação mais populares do mundo"
 pubDate: 2025-03-01
 image:
-  src: "/assets/posts/a-historia-do-javascript.webp"
+  src: "/assets/posts/default.png"
   alt: ""
 ---
 
@@ -12,7 +12,7 @@ O JavaScript, uma das linguagens de programação mais populares do mundo, possu
 
 ## O Nascimento Relâmpago
 
-Em 1995, a Netscape Communications, empresa por trás do navegador Netscape Navigator, dominava o mercado de navegadores. Buscando adicionar interatividade às páginas web, a Netscape contratou <a href="https://pt.wikipedia.org/wiki/Brendan_Eich" target="_blank">Brendan Eich</a>. Em apenas 10 dias, Eich criou o JavaScript, originalmente chamado de Mocha e depois LiveScript.
+Em 1995, a Netscape Communications, empresa por trás do navegador Netscape Navigator, dominava o mercado de navegadores. Buscando adicionar interatividade às páginas web, a Netscape contratou [Brendan Eich](https://brendaneich.com/). Em apenas 10 dias, Eich criou o JavaScript, originalmente chamado de Mocha e depois LiveScript.
 
 ### A Ascensão e a Padronização
 
@@ -36,8 +36,10 @@ Hoje, o JavaScript é uma linguagem onipresente, utilizada em diversas áreas:
 - Desenvolvimento mobile: Frameworks como React Native e Ionic permitem o desenvolvimento de aplicações mobile utilizando JavaScript.
 - Desenvolvimento de jogos: O JavaScript também é utilizado no desenvolvimento de jogos para web e mobile.
 
-### O Futuro do JavaScript
+### Conclusão
 
-O JavaScript continua a evoluir, com novas versões do ECMAScript sendo lançadas regularmente. A linguagem se mantém relevante e adaptável, acompanhando as tendências do desenvolvimento de software.
+O JavaScript continua a evoluir, com novas versões do [ECMAScript](/blog/a-evolucao-do-javascript) sendo lançadas regularmente.
+
+A linguagem se mantém relevante e adaptável, acompanhando as tendências do desenvolvimento de software.
 
 A história do JavaScript é uma prova de sua resiliência e adaptabilidade. Criada em um curto período de tempo, a linguagem se transformou em um pilar fundamental da web moderna, impulsionando a inovação e moldando a forma como interagimos com a tecnologia.

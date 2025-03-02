@@ -4,7 +4,11 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/PageLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 
-const posts = await getCollection("blog");
+const allPosts = await getCollection("blog");
+const posts = allPosts.sort(
+	(a, b) =>
+		new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+);
 ---
 
 <PageLayout title="Home" description="Welcome to VanillaJS">

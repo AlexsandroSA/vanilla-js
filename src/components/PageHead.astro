@@ -19,4 +19,19 @@ const { title, description } = Astro.props;
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
+<!-- Google tag (gtag.js) -->
+<script
+	type="text/partytown"
+	async
+	src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+<script type="text/partytown">
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
+
+	gtag("config", "G-S7RJ4JL8EC");
+</script>
+
 <ClientRouter />

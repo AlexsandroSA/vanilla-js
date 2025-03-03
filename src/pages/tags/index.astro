@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+
+import PageLayout from "@/layouts/PageLayout.astro";
+import Hero from "@/components/Hero.astro";
+import TagCloud from "@/components/TagCloud.astro";
+
+const allPosts = await getCollection("blog");
+const posts = allPosts.sort(
+	(a, b) =>
+		new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+);
+---
+
+<PageLayout title="Tags" description="Explore nossas tags e encontre artigos, dicas e tutoriais">
+	<!-- HERO -->
+	<Hero
+		title="Tags"
+		description="Explore nossas tags e encontre artigos, dicas e tutoriais"
+	/>
+
+	<!-- TAGS -->
+	<TagCloud showCount={true} displayNumber={99} />
+
+</PageLayout>

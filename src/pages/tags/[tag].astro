@@ -17,8 +17,6 @@ export async function getStaticPaths({}) {
 		post.data.tags && post.data.tags.map((tag) => allTags.add(slugify(tag)));
 	});
 
-	console.log(allTags);
-
 	return Array.from(allTags).map((tag) => {
 		console.log(tag);
 		
@@ -26,8 +24,6 @@ export async function getStaticPaths({}) {
 			const tags = post.data.tags.map(item => slugify(item));
 			return tags.includes(tag);
 		});
-
-		console.log(filteredPosts);
 
 		return {
 			params: { tag },
@@ -42,11 +38,10 @@ const { posts } = Astro.props;
 const { tag } = Astro.params;
 
 let title = tag;
-let description = "Posts with tag " + tag + ".";
+let description = "Artigos, dicas e tutoriais sobre " + tag + ".";
 ---
 
 <PageLayout>
-	
 	<!-- HERO -->
 	<Hero 
 		title={`#${title}`}
@@ -54,7 +49,7 @@ let description = "Posts with tag " + tag + ".";
 	/>
 	
 	<!-- POSTS -->
-	<section class="blog-post-list mt-12" aria-label="Blog post list">
+	<section class="mt-12">
 		<ul
 			class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-8"
 		>
@@ -83,9 +78,5 @@ let description = "Posts with tag " + tag + ".";
 				))
 			}
 		</ul>
-
-		<p class="posts-link">
-			<a href="/tags">Browse all tags</a>
-		</p>
 	</section>
 </PageLayout>

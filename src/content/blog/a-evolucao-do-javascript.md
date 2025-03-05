@@ -19,15 +19,15 @@ O JavaScript, a linguagem de programação que impulsiona a interatividade na we
 
 **1999:** Uma versão crucial que solidificou o JavaScript como uma linguagem viável. Introduziu recursos como expressões regulares e tratamento de erros com "try-catch".
 
-## A Mudança de Jogo: ECMAScript 5 (ES5)
+## A mudança de jogo: ECMAScript 5 (ES5)
 
 **2009:** Um marco na história do JavaScript. ES5 trouxe melhorias significativas, incluindo o modo estrito ("strict mode"), suporte para JSON e novos métodos de array, pavimentando o caminho para o desenvolvimento de aplicativos web mais complexos.
 
-## A Revolução: ECMAScript 6 (ES6) / ECMAScript 2015
+## A revolução: ECMAScript 6 (ES6) / ECMAScript 2015
 
 **2015:** Uma transformação radical. ES6 introduziu uma vasta gama de novos recursos, como classes, módulos, arrow functions, let e const, desestruturação e promessas. Esta versão modernizou o JavaScript, tornando-o mais poderoso e expressivo.
 
-## A Cadência Anual: ECMAScript 2016+
+## A cadência anual: ECMAScript 2016+
 
 Desde 2016, a Ecma International adotou um cronograma anual de lançamentos, trazendo uma série de melhorias e novos recursos a cada ano. Algumas das versões mais notáveis incluem:
 
@@ -47,7 +47,7 @@ Desde 2016, a Ecma International adotou um cronograma anual de lançamentos, tra
 
 **ECMAScript 2023 (ES14):** Adicionou Array find from last, Hashbang Grammar e Symbols as WeakMap keys.
 
-## O Presente e o Futuro
+## O presente e o futuro
 
 O JavaScript continua a evoluir, com novas propostas e recursos sendo desenvolvidos constantemente. A comunidade JavaScript é vibrante e ativa, impulsionando a inovação e garantindo que a linguagem permaneça relevante e poderosa.
 

@@ -26,7 +26,7 @@ Um algoritmo é uma sequência de passos lógicos e bem definidos para resolver 
 
 Estruturas de dados são formas de organizar e armazenar dados em um computador, para que possam ser acessados e modificados de forma eficiente. Pense em uma estante de livros: você pode organizar os livros por autor, título ou gênero, facilitando a busca. Na programação, as estruturas de dados fazem o mesmo com os dados.
 
-### Tipos de Estruturas de Dados
+### Tipos de estruturas de dados
 
 - **Listas**: Sequências ordenadas de elementos.
 - **Pilhas**: Estruturas que seguem o princípio "último a entrar, primeiro a sair" (LIFO).
@@ -34,7 +34,7 @@ Estruturas de dados são formas de organizar e armazenar dados em um computador,
 - **Árvores**: Estruturas hierárquicas, como árvores genealógicas.
 - **Grafos**: Estruturas que representam relações entre objetos.
 
-## A Relação entre Algoritmos e Estruturas de Dados
+## A relação entre algoritmos e estruturas de dados
 
 Algoritmos e estruturas de dados trabalham juntos. Um algoritmo precisa de uma estrutura de dados para armazenar e manipular os dados, enquanto uma estrutura de dados precisa de algoritmos para ser utilizada de forma eficiente.
 

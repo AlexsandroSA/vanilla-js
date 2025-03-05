@@ -19,9 +19,9 @@ export async function getStaticPaths({}) {
 
 	return Array.from(allTags).map((tag) => {
 		console.log(tag);
-		
+
 		const filteredPosts = sortedPosts.filter((post) => {
-			const tags = post.data.tags.map(item => slugify(item));
+			const tags = post.data.tags.map((item) => slugify(item));
 			return tags.includes(tag);
 		});
 
@@ -41,13 +41,10 @@ let title = tag;
 let description = "Artigos, dicas e tutoriais sobre " + tag + ".";
 ---
 
-<PageLayout>
+<PageLayout title={`Tag #${title}`}>
 	<!-- HERO -->
-	<Hero 
-		title={`#${title}`}
-		description={description}
-	/>
-	
+	<Hero title={`#${title}`} description={description} />
+
 	<!-- POSTS -->
 	<section class="mt-12">
 		<ul

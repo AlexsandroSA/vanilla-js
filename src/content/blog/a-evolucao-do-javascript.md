@@ -5,8 +5,8 @@ description: ""
 tags: ["JavaScript"]
 pubDate: 2025-03-02
 image:
-  src: "/assets/posts/default.png"
-  alt: ""
+  src: "/assets/posts/a-evolucao-do-javascript.webp"
+  alt: "JavaScript a linguagem de programação que impulsiona a interatividade na web"
 ---
 
 O JavaScript, a linguagem de programação que impulsiona a interatividade na web, passou por uma jornada notável desde sua criação. Para entender completamente o JavaScript moderno, é crucial explorar suas versões e como elas moldaram a linguagem que conhecemos hoje.

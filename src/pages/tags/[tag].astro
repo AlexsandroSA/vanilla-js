@@ -1,7 +1,7 @@
 ---
-import FormattedDate from "@/components/FormattedDate.astro";
-import Hero from "@/components/Hero.astro";
 import PageLayout from "@/layouts/PageLayout.astro";
+import Hero from "@/components/Hero.astro";
+import PostList from "@/components/PostList.astro";
 import { slugify } from "@/utils/slugify";
 import { getCollection } from "astro:content";
 
@@ -41,39 +41,12 @@ let title = tag;
 let description = "Artigos, dicas e tutoriais sobre " + tag + ".";
 ---
 
-<PageLayout title={`Tag #${title}`}>
+<PageLayout title={`Tag #${title}`} description={description}>
 	<!-- HERO -->
 	<Hero title={`#${title}`} description={description} />
 
 	<!-- POSTS -->
 	<section class="mt-12">
-		<ul
-			class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-8"
-		>
-			{
-				posts.map((post) => (
-					<li class="group relative">
-						<a href={`/blog/${post.id}`}>
-							<img
-								loading="lazy"
-								transition:name="cover"
-								src={post.data.image.src}
-								alt={post.data.image.alt}
-								class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
-							/>
-
-							<div class="flex items-center gap-x-4 text-xs my-2">
-								<FormattedDate date={post.data.pubDate} />
-							</div>
-
-							<h3 class="text-2xl font-semibold text-gray-900">
-								<span class="absolute inset-0" />
-								{post.data.title}
-							</h3>
-						</a>
-					</li>
-				))
-			}
-		</ul>
+		<PostList data={posts} />
 	</section>
 </PageLayout>

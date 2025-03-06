@@ -16,7 +16,7 @@ const { title, description, image, pubDate } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={SITE.LANGUAGE}>
 	<head>
 		<PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
 	</head>

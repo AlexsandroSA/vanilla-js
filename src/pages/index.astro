@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 import PageLayout from "@/layouts/PageLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
@@ -14,7 +14,10 @@ const posts = allPosts.sort(
 );
 ---
 
-<PageLayout title="Home" description="Welcome to VanillaJS">
+<PageLayout
+	title="Home"
+	description="JavaScript sem amarras, sem dependências. Aventure-se no mundo do VanillaJS e descubra a verdadeira essência da linguagem que move a web."
+>
 	<!-- HERO -->
 	<Hero
 		title="Desvendando o JavaScript"

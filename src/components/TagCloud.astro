@@ -23,7 +23,7 @@ const processedTags = allTags.reduce((acc, tag) => {
 const { showCount, displayNumber } = Astro.props;
 ---
 
-<div class="flex flex-wrap items-center gap-x-4 text-xs">
+<div class="flex flex-wrap items-center gap-4 text-xs">
 	{
 		Object.entries(processedTags)
 			.map(([key, val]) => (

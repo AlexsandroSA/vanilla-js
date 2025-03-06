@@ -1,6 +1,6 @@
 # VanillaJS
 
-<img width="1457" alt="Layout da pagina inicial do site VanillaJS" src="https://github.com/user-attachments/assets/5edbfda8-522a-440d-98fa-c058bb6c1042" />
+<img width="898" alt="Screenshot 2025-03-06 at 15 25 48" src="https://github.com/user-attachments/assets/3442fde6-2399-407a-be9f-b6285aea1a14" />
 
 Bem-vindo ao **VanillaJS**! Este projeto é dedicado a explorar o JavaScript em sua forma mais pura, sem a utilização de bibliotecas ou frameworks externos. Aqui, você encontrará artigos, tutoriais e exemplos práticos que mostram a verdadeira essência da linguagem que move a web.
 

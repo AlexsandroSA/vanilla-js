@@ -4,10 +4,6 @@
 
 Bem-vindo ao **VanillaJS**! Este projeto é dedicado a explorar o JavaScript em sua forma mais pura, sem a utilização de bibliotecas ou frameworks externos. Aqui, você encontrará artigos, tutoriais e exemplos práticos que mostram a verdadeira essência da linguagem que move a web.
 
-## Descrição
-
-O **VanillaJS** é um projeto que visa ensinar e promover o uso do JavaScript puro. Através de uma série de posts e exemplos, você aprenderá como utilizar o JavaScript de forma eficiente e entenderá os fundamentos que sustentam as bibliotecas e frameworks modernos.
-
 ## Scripts disponíveis
 
 - `npm run dev`: Inicia o servidor de desenvolvimento.

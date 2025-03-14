@@ -2,21 +2,13 @@
 import FormattedDate from "./FormattedDate.astro";
 
 const { data } = Astro.props;
-
-const getMobileImageByPath = (imagePath = '') => {
-	const imageThumb = imagePath.split(".");
-	const imgName = imageThumb.shift();
-	const imageExt = imageThumb.pop();
-
-	return `${imgName}-mobile.${imageExt}`;
-};
 ---
 
 <ul
 	class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-2 xl:gap-x-8"
 >
 	{
-		data.map((post, index) => (
+		data.map((post) => (
 			<li class="group relative">
 				<a href={`/blog/${post.id}`}>
 					<picture>				
@@ -25,7 +17,7 @@ const getMobileImageByPath = (imagePath = '') => {
 							transition:name="cover"
 							width="416"
 							height="288"
-							src={getMobileImageByPath(post.data.image.src)}
+							src={post.data.image.src}
 							alt={post.data.image.alt}
 							class="size-72 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 sm:aspect-2/1 lg:aspect-square"
 						/>

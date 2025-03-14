@@ -1,17 +1,17 @@
 ---
 isDraft: false
-title: "Algoritmos e Estruturas de Dados: A base da programação"
-description: "Tudo o que você precisa saber sobre Algoritmos e Estrutura de Dados"
-tags: ["JavaScript", "Algoritmos", "Estruturas de Dados"]
-pubDate: 2025-04-01
+title: "Algoritmos e estruturas de dados: A base da programação"
+description: "Tudo o que você precisa saber sobre algoritmos e estrutura de dados"
+tags: ["Javascript", "Algoritmos", "Estruturas de Dados"]
+pubDate: 2025-03-01
 image:
   src: "/assets/posts/algoritmos-e-estrutura-de-dados.webp"
-  alt: "Dados espalhados fazendo uma analogia a estrutura de dados"
+  alt: ""
 ---
 
 No mundo da programação, dois conceitos são fundamentais: algoritmos e estruturas de dados. Eles são como os ingredientes e a receita de um bolo: essenciais para o resultado final.
 
-## O que são Algoritmos?
+## O que são algoritmos?
 
 Um algoritmo é uma sequência de passos lógicos e bem definidos para resolver um problema. Imagine uma receita de bolo: ela te guia passo a passo para preparar a massa, assar e decorar. Na programação, os algoritmos fazem o mesmo, mas para tarefas complexas.
 

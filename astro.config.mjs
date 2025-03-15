@@ -5,11 +5,14 @@ import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 import rehypeExternalLinks from "rehype-external-links";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://www.vanilla-js.com.br/",
 	integrations: [
 		mdx(),
+		icon(),
 		sitemap(),
 		partytown({
 			config: {
@@ -25,7 +28,7 @@ export default defineConfig({
 			[
 				rehypeExternalLinks,
 				{
-					content: { type: "text", value: " 🔗" },
+					content: { type: "text", value: " ↗" },
 				},
 			],
 		],

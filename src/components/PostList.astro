@@ -11,7 +11,7 @@ const { data } = Astro.props;
 		data.map((post) => (
 			<li class="group relative">
 				<a href={`/blog/${post.id}`}>
-					<picture>				
+					<picture>
 						<img
 							loading="lazy"
 							transition:name="cover"
@@ -23,7 +23,7 @@ const { data } = Astro.props;
 						/>
 					</picture>
 
-					<div class="flex items-center gap-x-4 text-xs my-2">
+					<div class="my-2 flex items-center gap-x-4 text-xs">
 						<FormattedDate date={post.data.pubDate} />
 					</div>
 

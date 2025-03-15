@@ -25,7 +25,7 @@ const { title, description, image, pubDate } = Astro.props;
 	<body class="border-t-8 border-amber-300">
 		<PageHeader />
 
-		<main class="py-8 px-4 mx-auto max-w-4xl">
+		<main class="mx-auto max-w-4xl px-4 py-8">
 			<article>
 				<div class="flex items-center gap-x-4 text-xs">
 					<FormattedDate date={pubDate} />
@@ -37,14 +37,14 @@ const { title, description, image, pubDate } = Astro.props;
 					{title}
 				</h2>
 
-				<header class="mb-12 mt-6">
-					<figure class="_h-96 overflow-hidden mb-4">
+				<header class="mt-6 mb-12">
+					<figure class="_h-96 mb-4 overflow-hidden">
 						<img
 							transition:name="cover"
 							loading="lazy"
 							src={image.src}
 							alt={image.alt}
-							class="w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80 aspect-2/1"
+							class="aspect-2/1 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80"
 						/>
 					</figure>
 				</header>

@@ -1,0 +1,24 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import Hero from "@/components/Hero.astro";
+import Prose from "@/components/Prose.astro";
+
+const title = "Bem-vindo ao VanillaJS";
+const description =
+	"Aventure-se no mundo do VanillaJS e descubra a verdadeira essência da linguagem que move a web";
+---
+
+<PageLayout title={title} description={description}>
+	<Hero title={title} description={description} />
+
+	<Prose>
+		<article>
+			<p>
+				VanillaJS é um espaço dedicado a explorar o mundo do JavaScript puro, sem o
+				uso de frameworks ou bibliotecas. Aqui, você encontrará tutoriais,
+				dicas, truques e insights sobre como usar o JavaScript para criar
+				aplicativos web poderosos.
+			</p>
+		</article>
+	</Prose>
+</PageLayout>

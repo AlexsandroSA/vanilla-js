@@ -1,14 +1,16 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import Hero from "@/components/Hero.astro";
-import TagCloud from "@/components/TagCloud.astro";
+import Prose from "@/components/Prose.astro";
 
-const title = "Tags";
-const description = "Explore nossas tags e encontre artigos, dicas e tutoriais";
+const title = "Projetos";
+const description = "show me the code";
 ---
 
 <PageLayout title={title} description={description}>
 	<Hero title={title} description={description} />
 
-	<TagCloud showCount={true} displayNumber={99} />
+	<Prose>
+		<p>Em breve...</p>
+	</Prose>
 </PageLayout>

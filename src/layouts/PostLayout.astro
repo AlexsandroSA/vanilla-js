@@ -9,6 +9,8 @@ import PageHead from "@/components/PageHead.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import PageFooter from "@/components/PageFooter.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
+import Prose from "@/components/Prose.astro";
+import PostSocialShare from "@/components/PostSocialShare.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -20,7 +22,7 @@ const { title, description, image, pubDate } = Astro.props;
 	<head>
 		<PageHead title={`${title} | ${SITE.TITLE}`} description={description} />
 	</head>
-	<body>
+	<body class="border-t-8 border-amber-300">
 		<PageHeader />
 
 		<main class="py-8 px-4 mx-auto max-w-4xl">
@@ -47,29 +49,12 @@ const { title, description, image, pubDate } = Astro.props;
 					</figure>
 				</header>
 
-				<div
-					class="prose prose-neutral prose-xl
-        prose-h1:font-bold prose-h1:text-xl
-        prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
-        min-w-fit w-full"
-				>
+				<Prose>
 					<slot />
-				</div>
-
-				<div
-					class="prose prose-neutral prose-xl w-full border-t-1 border-gray-600 my-12 py-12"
-				>
-					<p>
-						Compartilhe este post e convide seus amigos para participar da
-						conversa
-					</p>
-
-					<SocialShare
-						title={`${title} | ${SITE.TITLE}`}
-						description={description}
-					/>
-				</div>
+				</Prose>
 			</article>
+
+			<PostSocialShare title={title} description={description} />
 		</main>
 
 		<PageFooter />

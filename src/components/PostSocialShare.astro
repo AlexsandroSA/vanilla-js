@@ -1,0 +1,14 @@
+---
+import { SocialShare } from "astro-social-share";
+import { SITE } from "@/consts";
+
+const { title, description } = Astro.props;
+---
+
+<section
+	class="prose prose-neutral prose-xl w-full border-t-1 border-gray-600 my-12 py-12"
+>
+	<p>Compartilhe:</p>
+
+	<SocialShare title={`${title} | ${SITE.TITLE}`} description={description} />
+</section>

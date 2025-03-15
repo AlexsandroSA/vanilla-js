@@ -1,15 +1,58 @@
 ---
 import Logo from "./Logo.astro";
+import { Icon } from "astro-icon/components";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+
+console.log(currentPath);
 ---
 
-<div>
-	<header class="mx-auto max-w-4xl">
-		<div class="p-5">
-			<h1 class="font-bold mr-5 text-2xl inline-flex items-center">
-				<a href="/">
-					<Logo />
-				</a>
+<nav>
+	<div class="mx-auto max-w-4xl">
+		<div class="flex justify-between items-center p-4">
+			<h1 class="text-2xl text-amber-800">
+				<a href="/"><Logo /></a>
 			</h1>
+
+			<ul class="flex gap-4">
+				<li>
+					<a
+						href="/"
+						class="flex items-center gap-2 text-black hover:text-amber-800"
+					>
+						<Icon class="text-2xl" name="home" />
+						<span class="hidden sm:inline">Home</span>
+					</a>
+				</li>
+				<li>
+					<a
+						href="/sobre"
+						class="flex items-center gap-2 text-black hover:text-amber-800"
+					>
+						<Icon class="text-2xl" name="info" />
+						<span class="hidden sm:inline">Sobre</span>
+					</a>
+				</li>
+				<li>
+					<a
+						href="/tags"
+						class="flex items-center gap-2 text-black hover:text-amber-800"
+					>
+						<Icon class="text-2xl" name="tags" />
+						<span class="hidden sm:inline">Tags</span>
+					</a>
+				</li>
+				<li>
+					<a
+						href="/projetos"
+						class="flex items-center gap-2 text-black hover:text-amber-800"
+					>
+						<Icon class="text-2xl" name="projects" />
+						<span class="hidden sm:inline">Projetos</span>
+					</a>
+				</li>
+			</ul>
 		</div>
-	</header>
-</div>
+	</div>
+</nav>

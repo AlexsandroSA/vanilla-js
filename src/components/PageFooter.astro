@@ -1,6 +1,7 @@
 ---
 import { SITE } from "@/consts";
 import { Icon } from "astro-icon/components";
+import { isProd } from "@/utils/environmentManagement";
 
 const currentYear = new Date().getFullYear();
 
@@ -74,7 +75,7 @@ const footerLinks = [
 			<div class="flex flex-col sm:flex-row justify-between items-center gap-4">
 				<p class="text-sm text-gray-500">
 					&copy; {currentYear} {SITE.TITLE}. Feito com 
-					<span class="text-red-500" aria-label="amor">♥</span> e JavaScript puro.
+					<span class="text-red-500" aria-label="amor">♥</span>.
 				</p>
 				<p class="text-xs text-gray-400">
 					Desenvolvido com <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-amber-700 transition-colors">Astro</a>
@@ -85,12 +86,14 @@ const footerLinks = [
 </footer>
 
 <!-- Google Analytics -->
+{isProd && 
 <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC"></script>
-<script is:inline>
+<script async is:inline>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() {
 		dataLayer.push(arguments);
 	}
 	gtag("js", new Date());
 	gtag("config", "G-S7RJ4JL8EC");
-</script>
+</script>}
+

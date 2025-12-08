@@ -3,35 +3,88 @@ import { Seo } from "astro-seo-meta";
 import { Schema } from "astro-seo-schema";
 import { ClientRouter } from "astro:transitions";
 
+import { SITE } from "@/consts";
 import "@/styles/global.css";
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	type?: "website" | "article";
+}
 
-const { title, description } = Astro.props;
+const {
+	title,
+	description = SITE.DESCRIPTION,
+	image = "/assets/posts/default.png",
+	type = "website",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
+
+const seoKeywords = [
+	"vanillaJS",
+	"javascript",
+	"javascript puro",
+	"programação web",
+	"desenvolvimento frontend",
+	"ecmascript",
+	"tutorial javascript",
+];
 ---
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Alexsandro Silva Alves" />
 
 <link rel="canonical" href={canonicalURL} />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE.TITLE} RSS Feed`}
+	href={new URL("/rss.xml", Astro.site)}
+/>
+
+<!-- Preconnect for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <Seo
 	title={title}
 	description={description}
-	keywords={["vanillaJS", "javascript"]}
-	themeColor="#000000"
+	keywords={seoKeywords}
+	themeColor="#92400e"
 	colorScheme="light"
 	icon="/favicon.ico"
+	facebook={{
+		image: imageURL.toString(),
+		url: canonicalURL.toString(),
+		type: type,
+	}}
+	twitter={{
+		image: imageURL.toString(),
+		card: "summary_large_image",
+	}}
 />
 
 <Schema
 	item={{
 		"@context": "https://schema.org",
-		"@type": "WebSite",
-		name: "VanillaJS",
-		url: "https://www.vanilla-js.com.br/",
+		"@type": type === "article" ? "Article" : "WebSite",
+		name: title,
+		description: description,
+		url: canonicalURL.toString(),
+		image: imageURL.toString(),
+		inLanguage: SITE.LANGUAGE,
+		publisher: {
+			"@type": "Organization",
+			name: SITE.TITLE,
+			url: Astro.site?.toString(),
+		},
 	}}
 />
 

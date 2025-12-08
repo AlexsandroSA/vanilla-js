@@ -16,7 +16,7 @@
 
 ## 📖 Sobre o Projeto
 
-Bem-vindo ao **VanillaJS**! Este projeto é um blog dedicado a explorar o JavaScript em sua forma mais pura, sem a utilização de bibliotecas ou frameworks externos. 
+Bem-vindo ao **VanillaJS**! Este projeto é um blog dedicado a explorar o JavaScript em sua forma mais pura, sem a utilização de bibliotecas ou frameworks externos.
 
 Aqui você encontrará artigos, tutoriais e exemplos práticos que mostram a verdadeira essência da linguagem que move a web.
 
@@ -24,11 +24,11 @@ Aqui você encontrará artigos, tutoriais e exemplos práticos que mostram a ver
 
 ## 🛠️ Tech Stack
 
-| Tecnologia | Descrição |
-|------------|-----------|
-| [Astro](https://astro.build/) | Framework web para sites focados em conteúdo |
-| [Tailwind CSS](https://tailwindcss.com/) | Framework CSS utilitário |
-| [MDX](https://mdxjs.com/) | Markdown com suporte a JSX |
+| Tecnologia                               | Descrição                                    |
+| ---------------------------------------- | -------------------------------------------- |
+| [Astro](https://astro.build/)            | Framework web para sites focados em conteúdo |
+| [Tailwind CSS](https://tailwindcss.com/) | Framework CSS utilitário                     |
+| [MDX](https://mdxjs.com/)                | Markdown com suporte a JSX                   |
 
 ---
 
@@ -36,7 +36,7 @@ Aqui você encontrará artigos, tutoriais e exemplos práticos que mostram a ver
 
 ### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) 18+ 
+- [Node.js](https://nodejs.org/) 18+
 - npm ou yarn
 
 ### Instalação
@@ -54,12 +54,12 @@ npm install
 
 ### Scripts Disponíveis
 
-| Comando | Descrição |
-|---------|-----------|
-| `npm run dev` | Inicia o servidor de desenvolvimento |
-| `npm run build` | Gera a build de produção |
-| `npm run preview` | Visualiza a build de produção |
-| `npm run lint:format` | Formata o código usando Prettier |
+| Comando               | Descrição                            |
+| --------------------- | ------------------------------------ |
+| `npm run dev`         | Inicia o servidor de desenvolvimento |
+| `npm run build`       | Gera a build de produção             |
+| `npm run preview`     | Visualiza a build de produção        |
+| `npm run lint:format` | Formata o código usando Prettier     |
 
 ---
 
@@ -120,6 +120,6 @@ Este projeto está licenciado sob a licença **MIT**. Veja o arquivo [LICENSE](L
 
 ---
 
-💡 *Dúvidas ou sugestões? Abra uma [issue](https://github.com/AlexsandroSA/vanilla-js/issues)!*
+💡 _Dúvidas ou sugestões? Abra uma [issue](https://github.com/AlexsandroSA/vanilla-js/issues)!_
 
 </div>

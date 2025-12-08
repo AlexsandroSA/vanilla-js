@@ -1,3 +1,17 @@
-<span class="text-black">
-	Vanilla<b class="rounded bg-amber-300 p-1">JS</b>
+---
+interface Props {
+	size?: "sm" | "md" | "lg";
+}
+
+const { size = "md" } = Astro.props;
+
+const sizeClasses = {
+	sm: "text-lg",
+	md: "text-xl",
+	lg: "text-2xl",
+};
+---
+
+<span class:list={["font-bold tracking-tight", sizeClasses[size]]}>
+	<span class="text-gray-900">Vanilla</span><span class="bg-amber-400 text-amber-900 px-1.5 py-0.5 rounded-md ml-0.5">JS</span>
 </span>

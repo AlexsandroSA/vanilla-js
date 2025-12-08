@@ -1,31 +1,96 @@
 ---
 import { SITE } from "@/consts";
+import { Icon } from "astro-icon/components";
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+	{ name: "GitHub", href: "https://github.com/AlexsandroSA", icon: "github" },
+	{ name: "RSS Feed", href: "/rss.xml", icon: "rss" },
+];
+
+const footerLinks = [
+	{ name: "Home", href: "/" },
+	{ name: "Projetos", href: "/projetos" },
+	{ name: "Sobre", href: "/sobre" },
+	{ name: "Tags", href: "/tags" },
+];
 ---
 
-<footer class="mt-32">
-	<div class="mx-auto max-w-4xl">
-		<div class="flex justify-between p-2">
+<footer class="mt-24 border-t border-gray-200">
+	<div class="mx-auto max-w-4xl px-4 py-12">
+		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+			<!-- Brand -->
 			<div>
-				<p class="text-bold">&copy; 2025 | {SITE.TITLE}</p>
+				<a href="/" class="text-2xl font-bold text-amber-800 hover:text-amber-700 transition-colors">
+					{SITE.TITLE}
+				</a>
+				<p class="mt-2 text-sm text-gray-600 max-w-xs">
+					{SITE.DESCRIPTION}
+				</p>
 			</div>
+
+			<!-- Links -->
+			<nav aria-label="Links do rodapé">
+				<h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+					Navegação
+				</h3>
+				<ul class="mt-4 space-y-2" role="list">
+					{footerLinks.map((link) => (
+						<li>
+							<a 
+								href={link.href}
+								class="text-sm text-gray-600 hover:text-amber-700 transition-colors"
+							>
+								{link.name}
+							</a>
+						</li>
+					))}
+				</ul>
+			</nav>
+
+			<!-- Social -->
 			<div>
-				<a
-					class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-					href="/rss.xml">rss</a
-				>
+				<h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+					Conecte-se
+				</h3>
+				<div class="mt-4 flex gap-4">
+					{socialLinks.map((link) => (
+						<a
+							href={link.href}
+							target={link.href.startsWith("http") ? "_blank" : undefined}
+							rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+							aria-label={link.name}
+							class="text-gray-500 hover:text-amber-700 transition-colors"
+						>
+							<Icon name={link.icon} class="w-6 h-6" />
+						</a>
+					))}
+				</div>
+			</div>
+		</div>
+		
+		<div class="mt-12 pt-8 border-t border-gray-100">
+			<div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+				<p class="text-sm text-gray-500">
+					&copy; {currentYear} {SITE.TITLE}. Feito com 
+					<span class="text-red-500" aria-label="amor">♥</span> e JavaScript puro.
+				</p>
+				<p class="text-xs text-gray-400">
+					Desenvolvido com <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-amber-700 transition-colors">Astro</a>
+				</p>
 			</div>
 		</div>
 	</div>
 </footer>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC"
-></script>
-<script async>
+<!-- Google Analytics -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC"></script>
+<script is:inline>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() {
 		dataLayer.push(arguments);
 	}
-
 	gtag("js", new Date());
 	gtag("config", "G-S7RJ4JL8EC");
 </script>

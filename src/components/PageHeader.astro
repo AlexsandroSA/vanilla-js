@@ -6,7 +6,6 @@ const pathname = new URL(Astro.request.url).pathname;
 
 const navLinks = [
 	{ href: "/", label: "Home", icon: "home" },
-	{ href: "/blog", label: "Blog", icon: "rss" },
 	{ href: "/projetos", label: "Projetos", icon: "projects" },
 	{ href: "/sobre", label: "Sobre", icon: "info" },
 ];
@@ -17,55 +16,61 @@ const isActive = (href: string) => {
 };
 ---
 
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+<header
+	class="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md"
+>
 	<nav aria-label="Navegação principal" class="mx-auto max-w-4xl">
 		<div class="flex items-center justify-between px-4 py-3">
-			<a 
-				href="/" 
+			<a
+				href="/"
 				class="flex items-center gap-2 transition-transform hover:scale-105"
 				aria-label="Ir para página inicial"
 			>
 				<Logo size="lg" />
 			</a>
 
-			<ul class="hidden sm:flex items-center gap-1" role="list">
-				{navLinks.map(({ href, label, icon }) => (
-					<li>
-						<a
-							href={href}
-							class:list={[
-								"flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
-								isActive(href)
-									? "bg-amber-100 text-amber-800"
-									: "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
-							]}
-							aria-current={isActive(href) ? "page" : undefined}
-						>
-							<Icon class="w-4 h-4" name={icon} />
-							{label}
-						</a>
-					</li>
-				))}
+			<ul class="hidden items-center gap-1 sm:flex" role="list">
+				{
+					navLinks.map(({ href, label, icon }) => (
+						<li>
+							<a
+								href={href}
+								class:list={[
+									"flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200",
+									isActive(href)
+										? "bg-amber-100 text-amber-800"
+										: "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
+								]}
+								aria-current={isActive(href) ? "page" : undefined}
+							>
+								<Icon class="h-4 w-4" name={icon} />
+								{label}
+							</a>
+						</li>
+					))
+				}
 			</ul>
 
-			<ul class="flex sm:hidden items-center gap-2" role="list">
-				{navLinks.map(({ href, label, icon }) => (
-					<li>
-						<a
-							href={href}
-							class:list={[
-								"flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200",
-								isActive(href)
-									? "bg-amber-100 text-amber-800"
-									: "text-gray-600 hover:bg-gray-100",
-							]}
-							aria-current={isActive(href) ? "page" : undefined}
-							aria-label={label}
-						>
-							<Icon class="w-5 h-5" name={icon} />
-						</a>
-					</li>
-				))}
+			<ul class="flex items-center gap-2 sm:hidden" role="list">
+				{
+					navLinks.map(({ href, label, icon }) => (
+						<li>
+							<a
+								href={href}
+								class:list={[
+									"flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200",
+									isActive(href)
+										? "bg-amber-100 text-amber-800"
+										: "text-gray-600 hover:bg-gray-100",
+								]}
+								aria-current={isActive(href) ? "page" : undefined}
+								aria-label={label}
+							>
+								<Icon class="h-5 w-5" name={icon} />
+							</a>
+						</li>
+					))
+				}
 			</ul>
 		</div>
 	</nav>

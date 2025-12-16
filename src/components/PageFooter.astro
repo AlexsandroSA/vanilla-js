@@ -6,7 +6,7 @@ import { isProd } from "@/utils/environmentManagement";
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
-	{ name: "GitHub", href: "https://github.com/AlexsandroSA", icon: "info" },
+	{ name: "GitHub", href: "https://github.com/AlexsandroSA/vanilla-js", icon: "github" },
 	{ name: "RSS Feed", href: "/rss.xml", icon: "rss" },
 ];
 
@@ -21,7 +21,6 @@ const footerLinks = [
 <footer class="mt-24 border-t border-gray-200">
 	<div class="mx-auto max-w-4xl px-4 py-12">
 		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-			<!-- Brand -->
 			<div>
 				<a href="/" class="text-2xl font-bold text-amber-800 hover:text-amber-700 transition-colors">
 					{SITE.TITLE}
@@ -31,7 +30,6 @@ const footerLinks = [
 				</p>
 			</div>
 
-			<!-- Links -->
 			<nav aria-label="Links do rodapé">
 				<h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">
 					Navegação
@@ -50,7 +48,6 @@ const footerLinks = [
 				</ul>
 			</nav>
 
-			<!-- Social -->
 			<div>
 				<h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">
 					Conecte-se
@@ -85,7 +82,6 @@ const footerLinks = [
 	</div>
 </footer>
 
-<!-- Google Analytics -->
 {isProd && 
 <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC"></script>
 <script async is:inline>

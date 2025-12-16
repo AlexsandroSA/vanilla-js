@@ -1,5 +1,4 @@
 ---
-import { SocialShare } from "astro-social-share";
 import type { CollectionEntry } from "astro:content";
 
 import "@/styles/global.css";
@@ -8,13 +7,16 @@ import { SITE } from "@/consts";
 import PageHead from "@/components/PageHead.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import PageFooter from "@/components/PageFooter.astro";
-import FormattedDate from "@/components/FormattedDate.astro";
 import Prose from "@/components/Prose.astro";
 import PostSocialShare from "@/components/PostSocialShare.astro";
+import AuthorBox from "@/components/AuthorBox.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+	id: string;
+	readingTime?: number;
+};
 
-const { title, description, image, pubDate } = Astro.props;
+const { id, title, description, image, pubDate, readingTime = 5 } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,33 +27,39 @@ const { title, description, image, pubDate } = Astro.props;
 	<body class="border-t-8 border-amber-300">
 		<PageHeader />
 
-		<main class="mx-auto max-w-4xl px-4 py-8">
+		<main class="mx-auto max-w-4xl px-4 py-8" transition:animate="fade">
 			<article>
-				<div class="flex items-center gap-x-4 text-xs">
-					<FormattedDate date={pubDate} />
-				</div>
-
-				<h2
-					class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+				<h1
+					class="mt-6 text-3xl leading-tight font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
+					transition:animate="slide"
 				>
 					{title}
-				</h2>
+				</h1>
 
-				<header class="mt-6 mb-12">
-					<figure class="_h-96 mb-4 overflow-hidden">
-						<img
-							transition:name="cover"
-							loading="lazy"
-							src={image.src}
-							alt={image.alt}
-							class="aspect-2/1 w-full rounded-lg bg-white object-cover group-hover:opacity-75 max-sm:h-80"
-						/>
-					</figure>
-				</header>
+				{
+					description && (
+						<p class="mt-4 text-lg text-gray-600" transition:animate="slide">
+							{description}
+						</p>
+					)
+				}
+
+				<figure class="mt-8 mb-12 overflow-hidden rounded-xl">
+					<img
+						transition:name={`post-image-${id}`}
+						loading="eager"
+						decoding="async"
+						src={image.src}
+						alt={image.alt}
+						class="aspect-2/1 w-full rounded-xl bg-gray-100 object-cover shadow-lg"
+					/>
+				</figure>
 
 				<Prose>
 					<slot />
 				</Prose>
+
+				<AuthorBox />
 			</article>
 
 			<PostSocialShare title={title} description={description} />

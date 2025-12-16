@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+import { AUTHOR } from "@/consts";
+---
+
+<aside class="mt-16 rounded-xl border border-gray-100 bg-gray-50 p-6">
+	<div class="flex items-start gap-4">
+		<div
+			class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-2xl font-bold text-white shadow-md"
+		>
+			{AUTHOR.NAME.charAt(0)}
+		</div>
+		<div class="flex-1">
+			<p class="text-sm font-medium tracking-wider text-gray-500 uppercase">
+				Escrito por
+			</p>
+			<p class="mt-1 text-lg font-semibold text-gray-900">
+				{AUTHOR.NAME}
+			</p>
+			<p class="mt-2 text-gray-600">
+				{AUTHOR.BIO}
+			</p>
+			<div class="mt-4 flex items-center gap-4">
+				<a
+					href={AUTHOR.GITHUB}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-amber-700"
+				>
+					<Icon name="github" class="h-5 w-5" />
+					GitHub
+				</a>
+				<a
+					href={AUTHOR.WEBSITE}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-amber-700"
+				>
+					<Icon name="website" class="h-5 w-5" />
+					Website
+				</a>
+			</div>
+		</div>
+	</div>
+</aside>

@@ -1,24 +1,191 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
-import Hero from "@/components/Hero.astro";
-import Prose from "@/components/Prose.astro";
+import { AUTHOR } from "@/consts";
 
-const title = "Bem-vindo ao VanillaJS";
+const title = "Sobre o VanillaJS";
 const description =
-	"Aventure-se no mundo do VanillaJS e descubra a verdadeira essência da linguagem que move a web";
+	"Aventure-se no mundo do JavaScript puro e descubra a verdadeira essência da linguagem que move a web";
+
+const features = [
+	{
+		title: "Fundamentos Sólidos",
+		description:
+			"Domine os conceitos essenciais do JavaScript: closures, prototypes, event loop, hoisting e muito mais. Entenda como a linguagem funciona por baixo dos panos.",
+		icon: "📚",
+	},
+	{
+		title: "Web APIs em Ação",
+		description:
+			"Explore o poder das APIs nativas do navegador: DOM manipulation, Fetch API, Web Storage, IntersectionObserver, e outras ferramentas poderosas.",
+		icon: "⚡",
+	},
+	{
+		title: "Boas Práticas",
+		description:
+			"Aprenda padrões de projeto, clean code, performance optimization e técnicas que tornarão seu código mais legível, manutenível e eficiente.",
+		icon: "✨",
+	},
+	{
+		title: "Projetos Reais",
+		description:
+			"Construa aplicações do zero usando apenas JavaScript puro. De componentes interativos a SPAs completas, sem dependências externas.",
+		icon: "🚀",
+	},
+];
 ---
 
 <PageLayout title={title} description={description}>
-	<Hero title={title} description={description} />
+	<section class="relative py-12">
+		<div class="absolute inset-0 -z-10">
+			<div
+				class="absolute right-0 top-0 h-64 w-64 rounded-full bg-amber-100 opacity-50 blur-3xl"
+			>
+			</div>
+			<div
+				class="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-yellow-100 opacity-40 blur-3xl"
+			>
+			</div>
+		</div>
 
-	<Prose>
-		<article>
-			<p>
-				VanillaJS é um espaço dedicado a explorar o mundo do JavaScript puro,
-				sem o uso de frameworks ou bibliotecas. Aqui, você encontrará tutoriais,
-				dicas, truques e insights sobre como usar o JavaScript para criar
-				aplicativos web poderosos.
+		<div class="text-center">
+			<h1
+				class="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+			>
+				<span class="text-gray-400">{"{ "}</span>
+				Descubra o poder do VanillaJS
+				<span class="text-gray-400">{" }"}</span>
+			</h1>
+
+			<p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+				Em um mundo dominado por frameworks e bibliotecas, existe uma beleza singular em dominar a essência pura do JavaScript. Este é um espaço dedicado a quem quer ir além das abstrações.
 			</p>
-		</article>
-	</Prose>
+		</div>
+	</section>
+
+	<section class="py-12">
+		<div class="rounded-2xl border border-amber-100 bg-gradient-to-br from-amber-50/80 to-yellow-50/50 p-8 sm:p-10">
+			<h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+				Por que JavaScript puro?
+			</h2>
+
+			<div class="mt-6 space-y-4 text-gray-700">
+				<p>
+					Frameworks vêm e vão, mas JavaScript permanece. Quando você entende
+					profundamente a linguagem, você não apenas usa ferramentas —
+					<strong class="text-amber-700">você as cria</strong>.
+				</p>
+
+				<p>
+					VanillaJS não é sobre rejeitar bibliotecas. É sobre fazer escolhas
+					conscientes. É saber quando um framework é necessário e quando 50
+					linhas de JavaScript puro resolvem o problema com mais elegância.
+				</p>
+
+				<p>
+					Aqui você vai encontrar conteúdo para quem quer entender o
+					<em>porquê</em>, não apenas o <em>como</em>.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-12">
+		<h2 class="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+			O que você vai encontrar
+		</h2>
+
+		<div class="mt-10 grid gap-6 sm:grid-cols-2">
+			{
+				features.map((feature, index) => (
+					<article
+						class="group relative overflow-hidden rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:border-amber-200 hover:shadow-lg"
+						style={`animation-delay: ${index * 100}ms`}
+					>
+						<div class="absolute -right-6 -top-6 text-7xl opacity-10 transition-transform duration-500 group-hover:scale-125 group-hover:opacity-20">
+							{feature.icon}
+						</div>
+
+						<span class="mb-4 inline-block text-4xl">{feature.icon}</span>
+
+						<h3 class="text-xl font-semibold text-gray-900">
+							{feature.title}
+						</h3>
+
+						<p class="mt-2 text-gray-600">{feature.description}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="py-12">
+		<div class="relative">
+			<div class="absolute left-0 top-0 h-full w-1 rounded-full bg-gradient-to-b from-amber-400 to-yellow-300"></div>
+
+			<div class="pl-8">
+				<h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+					Nossa Filosofia
+				</h2>
+
+				<blockquote class="mt-6 text-xl italic text-gray-700">
+					"Primeiro, aprenda a fazer sem frameworks. Depois, use-os para ir mais rápido — não para esconder o que você não entende."
+				</blockquote>
+
+				<ul class="mt-8 space-y-4">
+					<li class="flex items-start gap-3">
+						<span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
+							1
+						</span>
+						<span class="text-gray-700">
+							<strong class="text-gray-900">Entenda os fundamentos</strong> — DOM, eventos, async/await, módulos. A base que nunca muda.
+						</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
+							2
+						</span>
+						<span class="text-gray-700">
+							<strong class="text-gray-900">Construa coisas reais</strong> — Teoria sem prática é esquecível. Código escrito é conhecimento solidificado.
+						</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
+							3
+						</span>
+						<span class="text-gray-700">
+							<strong class="text-gray-900">Questione as abstrações</strong> — Entenda o que seu framework faz. Debugar é muito mais fácil quando você conhece a linguagem.
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-12 text-center">
+		<h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+			Pronto para começar?
+		</h2>
+
+		<p class="mx-auto mt-4 max-w-xl text-gray-600">
+			Explore os artigos, experimente os exemplos e descubra como o JavaScript puro pode transformar a forma como você desenvolve para a web.
+		</p>
+
+		<div class="mt-8 flex flex-wrap justify-center gap-4">
+			<a
+				href="/blog"
+				class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 font-semibold text-gray-900 shadow-lg shadow-amber-500/25 transition-all hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-xl hover:shadow-amber-500/30"
+			>
+				Ver Artigos
+				<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+				</svg>
+			</a>
+			<a
+				href="/projetos"
+				class="inline-flex items-center gap-2 rounded-lg border-2 border-gray-200 px-6 py-3 font-semibold text-gray-700 transition-all hover:border-amber-300 hover:bg-amber-50"
+			>
+				Ver Projetos
+			</a>
+		</div>
+	</section>
 </PageLayout>

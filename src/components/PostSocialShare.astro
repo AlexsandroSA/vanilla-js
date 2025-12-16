@@ -5,10 +5,55 @@ import { SITE } from "@/consts";
 const { title, description } = Astro.props;
 ---
 
-<section
-	class="prose prose-neutral prose-xl my-12 w-full border-t-1 border-gray-600 py-12"
->
-	<p>Compartilhe:</p>
+<section class="my-12 border-t border-gray-200 pt-10">
+	<div class="flex flex-col items-center gap-6 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50/50 p-8 text-center sm:p-10">
+		<div class="flex h-14 w-14 items-center justify-center rounded-full bg-amber-100 text-2xl">
+			🚀
+		</div>
+		
+		<div>
+			<h3 class="text-xl font-bold text-gray-900">
+				Gostou do conteúdo?
+			</h3>
+			<p class="mt-2 text-gray-600">
+				Compartilhe com outros desenvolvedores e ajude a espalhar conhecimento!
+			</p>
+		</div>
 
-	<SocialShare title={`${title} | ${SITE.TITLE}`} description={description} />
+		<div class="social-share-wrapper flex flex-wrap justify-center gap-3">
+			<SocialShare 
+				title={`${title} | ${SITE.TITLE}`} 
+				description={description} 
+			/>
+		</div>
+	</div>
 </section>
+
+<style>
+	.social-share-wrapper :global(a) {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 12px;
+		background-color: white;
+		border: 1px solid #e5e7eb;
+		color: #6b7280;
+		transition: all 0.2s ease;
+		box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	}
+
+	.social-share-wrapper :global(a:hover) {
+		background-color: #fef3c7;
+		border-color: #fcd34d;
+		color: #92400e;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+	}
+
+	.social-share-wrapper :global(svg) {
+		width: 20px;
+		height: 20px;
+	}
+</style>

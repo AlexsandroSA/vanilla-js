@@ -82,14 +82,17 @@ const footerLinks = [
 	</div>
 </footer>
 
-{isProd && 
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC"></script>
-<script async is:inline>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag("js", new Date());
-	gtag("config", "G-S7RJ4JL8EC");
-</script>}
+{isProd && (
+<>
+	<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-S7RJ4JL8EC" is:inline></script>
+	<script type="text/partytown" is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+		gtag("config", "G-S7RJ4JL8EC");
+	</script>
+</>
+)}
 
